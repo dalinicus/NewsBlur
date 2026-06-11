@@ -24,14 +24,14 @@
     ENV_DEV = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'debug';
     ENV_PROD = process.env.NODE_ENV === 'production';
     ENV_DOCKER = process.env.NODE_ENV === 'docker';
-    REDIS_SERVER = "newsblur_db_redis";
+    REDIS_SERVER = process.env.REDIS_HOST || "newsblur-db-redis";
     if (ENV_DEV) {
       REDIS_SERVER = 'localhost';
     } else if (ENV_PROD) {
       REDIS_SERVER = 'db-redis-pubsub.service.nyc1.consul';
     }
     SECURE = !!process.env.NODE_SSL;
-    REDIS_PORT = ENV_DOCKER ? 6579 : 6383;
+    REDIS_PORT = parseInt(process.env.REDIS_PORT || (ENV_DOCKER ? 6579 : 6383), 10);
     // client = redis.createClient 6379, REDIS_SERVER
 
     // RedisStore  = require 'socket.io/lib/stores/redis'

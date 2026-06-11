@@ -17,7 +17,7 @@
     ENV_DOCKER = process.env.NODE_ENV === 'docker';
     MONGODB_USERNAME = process.env.MONGODB_USERNAME;
     MONGODB_PASSWORD = process.env.MONGODB_PASSWORD;
-    MONGODB_SERVER = "newsblur_db_mongo";
+    MONGODB_SERVER = process.env.MONGODB_HOST || "newsblur-db-mongo";
     if (ENV_DEV) {
       MONGODB_SERVER = 'localhost';
     } else if (ENV_PROD) {
