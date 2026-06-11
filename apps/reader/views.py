@@ -168,6 +168,7 @@ ALLOWED_SUBDOMAINS = [
     "staging2",
     "staging3",
     "nb",
+    "news"
 ]
 # Deprecated: lazy merge is now always used for all river loads (no ZUNIONSTORE)
 RIVER_SLOWDOWN_USERS = []

@@ -19,6 +19,7 @@ what diverges from upstream.
 | `AGENTS.md` | Kept as-is (upstream content) |
 | `node/unread_counts.coffee` + `.js` | Redis host/port now read from `REDIS_HOST` / `REDIS_PORT` env vars (fallback: `newsblur-db-redis` / docker-mode port) |
 | `node/favicons.coffee` + `.js` | Mongo host now reads from `MONGODB_HOST` env var (fallback: `newsblur-db-mongo`) |
+| `apps/reader/views.py` | Added news to the list of allowed subdomains.  allows news.dalinicus.com
 
 ## Outstanding tasks
 
